@@ -1,0 +1,26 @@
+
+We start by defining three constants: MAX_HUNGER_LEVEL, MAX_HAPPINESS_LEVEL, and MAX_ENERGY_LEVEL, which represent the maximum values for the Tamagotchi's hunger, happiness, and energy levels.
+
+The TamagotchiGame class is created to encapsulate the game logic. It has instance variables hungerLevel, happinessLevel, and energyLevel to keep track of the Tamagotchi's current levels.
+
+The constructor TamagotchiGame() initializes the Tamagotchi's levels to their maximum values.
+
+The play() method is the main game loop. It repeatedly displays the Tamagotchi's current levels, presents the player with a menu of options, and performs the chosen action. The loop continues until the game is over or the player chooses to exit.
+
+The displayStats() method simply prints the Tamagotchi's current levels.
+
+The feed() method allows the player to feed the Tamagotchi. If the hunger level is not already at its maximum, the hunger level is incremented, and a message is displayed. Otherwise, a message is shown indicating that the Tamagotchi is already full.
+
+The playWith() method lets the player play with the Tamagotchi. If the energy level is at least 2, the happiness level is increased, and the energy level is decreased. Otherwise, a message is shown indicating that the Tamagotchi is too tired to play.
+
+The sleep() method allows the Tamagotchi to sleep and regain energy. If the energy level is not already at its maximum, the hunger level and happiness level are decreased, and the energy level is set to its maximum value. Otherwise, a message is displayed indicating that the Tamagotchi is not sleepy.
+
+The updateStats() method is called after each action to update the Tamagotchi's levels. It decreases the hunger level, happiness level, and energy level by 1. If any level drops below 0, it is set to 0.
+
+The isGameOver() method checks if any of the Tamagotchi's levels (hunger, happiness, or energy) have reached 0. If any level is 0, the game is considered over.
+
+The exitGame() method is called when the player chooses to exit the game. It simply displays a farewell message.
+
+The main() method creates an instance of TamagotchiGame and starts the game by calling the play() method.
+
+To play the game, you'll see a menu with options to feed, play, and make the Tamagotchi sleep. The game will display the Tamagotchi's levels after each action. If any level reaches 0, the game ends. You can choose to exit the game at any time.
