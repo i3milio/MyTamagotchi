@@ -115,8 +115,5 @@ public class TamagotchiGame {
         System.out.println("Exiting the game. Goodbye!");
     }
 
-    public static void main(String[] args) {
-        TamagotchiGame game = new TamagotchiGame();
-        game.play();
-    }
+    
 }
