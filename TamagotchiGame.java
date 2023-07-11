@@ -62,13 +62,40 @@ public class TamagotchiGame {
     }
 
     private void feed() {
-        if (hungerLevel < MAX_HUNGER_LEVEL) {
-            hungerLevel++;
-            System.out.println("Yum! Your Tamagotchi enjoyed the meal.");
-        } else {
-            System.out.println("Your Tamagotchi is already full.");
-        }
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Select the type of food:");
+    System.out.println("1. Healthy food (decreases hunger by 2)");
+    System.out.println("2. Treat (decreases hunger by 1)");
+    System.out.println("3. Junk food (no effect on hunger)");
+
+    String choice = scanner.nextLine();
+
+    switch (choice) {
+        case "1":
+            decreaseHunger(2);
+            System.out.println("Yum! Your Tamagotchi enjoyed the healthy meal.");
+            break;
+        case "2":
+            decreaseHunger(1);
+            System.out.println("Your Tamagotchi happily ate the treat.");
+            break;
+        case "3":
+            System.out.println("Your Tamagotchi didn't like the junk food.");
+            break;
+        default:
+            System.out.println("Invalid choice. Please try again.");
     }
+}
+
+private void decreaseHunger(int amount) {
+    if (hungerLevel >= amount) {
+        hungerLevel -= amount;
+    } else {
+        hungerLevel = 0;
+    }
+}
+    
 
     private void playWith() {
         if (energyLevel >= 2) {

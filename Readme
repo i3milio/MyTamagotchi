@@ -24,7 +24,8 @@ The exitGame() method is called when the player chooses to exit the game. It sim
 
 The main() method creates an instance of TamagotchiGame and starts the game by calling the play() method.
 
-To play the game, you'll see a menu with options to feed, play, and make the Tamagotchi sleep. The game will display the Tamagotchi's levels after each action. If any level reaches 0, the game ends. You can choose to exit the game at any time.
+To play the game, you'll see a menu with options to feed, play, and make the Tamagotchi sleep. The game will display the Tamagotchi's levels after each action. If any level reaches 0, the game ends. You can choose to exit the game at any time
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Right now, feed() method has a bug. partially funtional 
+Feed() method was updated with a more detail and interactive one. menu that allows you to pick the type of food you want to feed your tamagotchi with different values changes.
+Created a sub method that helps the feed() method. decreaseHunger.
