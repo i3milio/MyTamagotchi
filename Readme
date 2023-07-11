@@ -1,3 +1,4 @@
+FIRST REVISION
 
 We start by defining three constants: MAX_HUNGER_LEVEL, MAX_HAPPINESS_LEVEL, and MAX_ENERGY_LEVEL, which represent the maximum values for the Tamagotchi's hunger, happiness, and energy levels.
 
@@ -24,3 +25,6 @@ The exitGame() method is called when the player chooses to exit the game. It sim
 The main() method creates an instance of TamagotchiGame and starts the game by calling the play() method.
 
 To play the game, you'll see a menu with options to feed, play, and make the Tamagotchi sleep. The game will display the Tamagotchi's levels after each action. If any level reaches 0, the game ends. You can choose to exit the game at any time.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Right now, feed() method has a bug. partially funtional 
