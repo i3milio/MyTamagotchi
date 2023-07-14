@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TamagotchiGame {
@@ -23,9 +24,11 @@ public class TamagotchiGame {
             displayStats();
             System.out.println("Enter an option: ");
             System.out.println("1. Feed");
-            System.out.println("2. Play");
+            System.out.println("2. Pet");
             System.out.println("3. Sleep");
-            System.out.println("4. Exit");
+            System.out.println("4. Play mini-game");
+            System.out.println("5. Exit");
+
 
             choice = scanner.nextLine();
 
@@ -40,6 +43,9 @@ public class TamagotchiGame {
                     sleep();
                     break;
                 case "4":
+                    playMiniGame();
+                    return;
+                    case "5":
                     exitGame();
                     return;
                 default:
@@ -116,6 +122,35 @@ private void decreaseHunger(int amount) {
         } else {
             System.out.println("Your Tamagotchi is not sleepy.");
         }
+    }
+
+    private void playMiniGame() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Guess what number I'm guessing: ");
+        String randomValue = scanner.nextLine();
+        int intRandomValue = Integer.parseInt(randomValue);
+
+        Random random = new Random();
+        int randomNumber = random.nextInt(5) + 1;
+
+        if (intRandomValue == randomNumber) {
+        happinessLevel += 2;
+        energyLevel += 2;
+        System.out.println("Congratulations, you won! Your Tamagotchi is happier and more energetic.");
+    } else 
+    {
+        happinessLevel -= 1;
+        energyLevel -= 1;
+        System.out.println("Unfortunately, you didn't win. Your Tamagotchi is slightly less happy and feels a bit tired.");
+    }
+   
+    // Ensure happiness and energy levels don't exceed their maximum
+    if (happinessLevel > MAX_HAPPINESS_LEVEL || energyLevel > MAX_ENERGY_LEVEL ) {
+        happinessLevel = MAX_HAPPINESS_LEVEL;
+        energyLevel = MAX_ENERGY_LEVEL;
+    }
+    
     }
 
     private void updateStats() {
