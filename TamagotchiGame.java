@@ -10,6 +10,8 @@ public class TamagotchiGame {
     private int happinessLevel;
     private int energyLevel;
 
+    Scanner scanner = new Scanner(System.in);
+
     public TamagotchiGame() {
         hungerLevel = MAX_HUNGER_LEVEL;
         happinessLevel = MAX_HAPPINESS_LEVEL;
@@ -17,7 +19,7 @@ public class TamagotchiGame {
     }
 
     public void play() {
-        Scanner scanner = new Scanner(System.in);
+        
         String choice;
 
         while (true) {
@@ -125,7 +127,6 @@ private void decreaseHunger(int amount) {
     }
 
     private void playMiniGame() {
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Guess what number I'm guessing: ");
         String randomValue = scanner.nextLine();
@@ -151,6 +152,10 @@ private void decreaseHunger(int amount) {
         energyLevel = MAX_ENERGY_LEVEL;
     }
     
+    play();
+    
+
+
     }
 
     private void updateStats() {
